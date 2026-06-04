@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 0 12px rgba(0, 255, 200, 0.3);
+        }
+        h1 {
+            font-size: 32px;
+            color: #00ffc8;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .model-result {
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #2a2a2a;
+            border-left: 4px solid #00ffc8;
+            border-radius: 8px;
+        }
+        .model-result strong {
+            color: #00ffc8;
+        }
+        .final {
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px dashed #00ffc8;
+            border-radius: 10px;
+            text-align: center;
+        }
+        a {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00ffc8;
+            color: #000;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        a:hover {
+            background-color: #00ccaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Prediction Result</h1>
+
+        <p><strong>Input:</strong> {{ input_text }}</p>
+
+        <h3>🔍 Model Predictions:</h3>
+        {% for model, result in predictions.items() %}
+            <div class="model-result">
+                <strong>{{ model }}</strong>: {{ result }} (Accuracy: {{ accuracies[model] }})
+            </div>
+        {% endfor %}
+
+        <div class="final">
+            <h3>✅ Final Result</h3>
+            <p><strong>Best Model:</strong> {{ best_model }}</p>
+            <p><strong>Prediction:</strong> {{ final_prediction }}</p>
+        </div>
+
+        <a href="/">🔁 Try Again</a>
+    </div>
+</body>
+</html>
