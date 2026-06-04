@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detector</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #00ffc8;
+        }
+        textarea {
+            width: 70%;
+            height: 200px;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 2px solid #00ffc8;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            resize: none;
+        }
+        button {
+            margin-top: 25px;
+            padding: 12px 28px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #00ffc8;
+            color: #000;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #00ccaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>📰 Fake News Detection System</h1>
+    <form action="/predict" method="post">
+        <textarea name="news" placeholder="Paste your news article here..."></textarea><br>
+        <button type="submit">🕵️ Detect News</button>
+    </form>
+</body>
+</html>
